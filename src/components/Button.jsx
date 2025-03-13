@@ -1,4 +1,7 @@
-const Button = ({ children, styleprop, icon }) => {
+import { useContext } from "react";
+import context from "../utils/context";
+const Button = ({ children, styleprop, icon, component }) => {
+  const {addCategoryComp,setShowAddCategory} = useContext(context);
   return (
     <button
       className={
@@ -14,7 +17,7 @@ const Button = ({ children, styleprop, icon }) => {
           className="w-5 h-5"
         />
       )}
-      <p className="pt-1">{children}</p>
+      <p >{children}</p>
     </button>
   );
 };
